@@ -57,3 +57,180 @@
 </footer>
 </body>
 </html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zona Gamer Play | Juegos Gratis Online Sin Descargar</title>
+  <meta name="description" content="Juegos gratis online en Zona Gamer Play. Disfruta de arcade, carreras, puzzle y acción desde tu navegador.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-top: 25px; }
+    .game-card { background: #151d35; border: 1px solid #27304d; border-radius: 14px; padding: 18px; text-align: center; transition: all 0.25s ease; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+    .game-card:hover { transform: translateY(-6px); border-color: #8bd3ff; box-shadow: 0 8px 20px rgba(139, 211, 255, 0.15); }
+    .game-card h4 { margin: 10px 0 6px 0; color: #fff; font-size: 17px; }
+    .game-card span { font-size: 11px; color: #8bd3ff; background: #0b1020; padding: 4px 10px; border-radius: 12px; font-weight: bold; }
+    .game-card button { margin-top: 12px; width: 100%; background: #27304d; color: #fff; }
+    .game-card:hover button { background: #8bd3ff; color: #0b1020; }
+    #iframe-container { display: none; margin-top: 30px; background: #151d35; border: 2px solid #8bd3ff; border-radius: 16px; padding: 20px; }
+    .responsive-iframe { width: 100%; height: 620px; border: none; border-radius: 12px; background: #000; }
+    @media(max-width: 768px) { .responsive-iframe { height: 450px; } .game-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">ZONA GAMER PLAY</a>
+    <nav>
+      <a href="#juegos">Juegos Web</a>
+      <a href="#locales">Minijuegos JS</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#trucos">Trucos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="tag">🎮 MÁS DE 10 JUEGOS ONLINE GRATIS</p>
+      <h1>Juega al instante sin descargas.</h1>
+      <p>Explora nuestro catálogo en constante expansión con juegos retro, puzzles, carreras y acción.</p>
+      <a class="button" href="#juegos">Ver Catálogo de Juegos</a>
+    </div>
+  </section>
+
+  <section id="iframe-container" class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; flex-wrap:wrap; gap:10px;">
+      <h3 id="current-game-title" style="margin:0; font-size:22px; color:#8bd3ff;">Cargando...</h3>
+      <button onclick="cerrarIframe()" style="margin:0; background:#e63946; color:#fff;">✖ Cerrar Juego</button>
+    </div>
+    <iframe id="game-frame" class="responsive-iframe" allowfullscreen src=""></iframe>
+  </section>
+
+  <section id="juegos" class="container section">
+    <h2>🕹️ Catálogo de Juegos Online</h2>
+    <p style="color:#b9c1d8;">Haz clic en cualquier juego para empezar a jugar directamente en la web:</p>
+
+    <div class="game-grid">
+      <div class="game-card" onclick="cargarJuego('2048 Classic', 'https://play2048.co/')">
+        <div class="emoji">🧩</div>
+        <h4>2048 Classic</h4>
+        <span>Lógica</span>
+        <button>Jugar Ahora</button>
+      </div>
+      <div class="game-card" onclick="cargarJuego('Hextris', 'https://hextris.io/')">
+        <div class="emoji">🔷</div>
+        <h4>Hextris</h4>
+        <span>Arcade</span>
+        <button>Jugar Ahora</button>
+      </div>
+      <div class="game-card" onclick="cargarJuego('Pac-Man Web', 'https://freepacman.org/')">
+        <div class="emoji">🟡</div>
+        <h4>Pac-Man Retro</h4>
+        <span>Clásico</span>
+        <button>Jugar Ahora</button>
+      </div>
+      <div class="game-card" onclick="cargarJuego('Flappy Bird', 'https://flappybird.io/')">
+        <div class="emoji">🐦</div>
+        <h4>Flappy Bird</h4>
+        <span>Habilidad</span>
+        <button>Jugar Ahora</button>
+      </div>
+      <div class="game-card" onclick="cargarJuego('Doodle Jump', 'https://doodlejump.io/')">
+        <div class="emoji">🐸</div>
+        <h4>Doodle Jump</h4>
+        <span>Plataformas</span>
+        <button>Jugar Ahora</button>
+      </div>
+      <div class="game-card" onclick="cargarJuego('Ajedrez Pro', 'https://lichess.org/tv/frame?theme=brown&bg=dark')">
+        <div class="emoji">♟️</div>
+        <h4>Ajedrez Pro</h4>
+        <span>Estrategia</span>
+        <button>Jugar Ahora</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="locales" class="container section">
+    <h2>⚡ Minijuegos Exclusivos</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="emoji">🕹️</div>
+        <h3>Snake Neon</h3>
+        <p>Juego clásico de la serpiente con récord de puntuación.</p>
+        <button onclick="iniciarJuego('snake')">Jugar Exclusivo</button>
+      </article>
+      <article class="card">
+        <div class="emoji">🚗</div>
+        <h3>Speed Racer 2D</h3>
+        <p>Esquiva el tráfico en una pista a máxima velocidad.</p>
+        <button onclick="iniciarJuego('cars')">Jugar Exclusivo</button>
+      </article>
+      <article class="card">
+        <div class="emoji">⚔️</div>
+        <h3>Cyber Knight</h3>
+        <p>Defiende la base contra oleadas enemigas en 2D.</p>
+        <button onclick="iniciarJuego('action')">Jugar Exclusivo</button>
+      </article>
+    </div>
+
+    <div id="game-area" class="info" style="display:none; text-align:center; margin-top:30px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+        <h3 id="game-title" style="margin:0;">Juego Local</h3>
+        <button onclick="cerrarJuego()" style="margin:0; background:#e63946; color:#fff;">✖ Cerrar</button>
+      </div>
+      <canvas id="gameCanvas" width="400" height="500" style="background:#000; border:2px solid #8bd3ff; border-radius:12px; width:100%; max-width:400px; height:auto; display:block; margin:auto;"></canvas>
+      <div id="touch-controls" style="margin-top:15px; display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <button id="btnUp" style="padding:12px 20px;">▲</button>
+        <div>
+          <button id="btnLeft" style="padding:12px 20px;">◄</button>
+          <button id="btnAction" style="padding:12px 20px; background:#8bd3ff; color:#000;">🔥</button>
+          <button id="btnRight" style="padding:12px 20px;">►</button>
+        </div>
+        <button id="btnDown" style="padding:12px 20px;">▼</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="noticias" class="container section">
+    <h2>📰 Noticias gaming</h2>
+    <div class="info">
+      <h3>Las últimas novedades</h3>
+      <p>Noticias, lanzamientos y novedades de PlayStation, Xbox, Nintendo y PC.</p>
+    </div>
+  </section>
+
+  <section id="trucos" class="container section">
+    <h2>💡 Trucos y guías</h2>
+    <div class="info">
+      <h3>Guías para mejorar tus partidas</h3>
+      <p>Publicaremos trucos, consejos y guías optimizadas para buscadores.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>Zona Gamer Play</strong>
+    <p>© 2026 Zona Gamer Play · Juegos online gratis sin descargas</p>
+  </div>
+</footer>
+
+<script src="games.js"></script>
+<script>
+  function cargarJuego(nombre, url) {
+    document.getElementById('iframe-container').style.display = 'block';
+    document.getElementById('current-game-title').innerText = 'Jugando a: ' + nombre;
+    document.getElementById('game-frame').src = url;
+    document.getElementById('iframe-container').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function cerrarIframe() {
+    document.getElementById('iframe-container').style.display = 'none';
+    document.getElementById('game-frame').src = '';
+  }
+</script>
+</body>
+</html>
