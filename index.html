@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Crea ideas, textos y prompts para imágenes y vídeos con IA desde una sola web. Prueba herramientas gratuitas y descubre las funciones Premium.">
+  <meta name="robots" content="index,follow">
+  <title>NovaIA Studio — Herramientas de inteligencia artificial</title>
+  <style>
+    :root{--bg:#0d1020;--panel:#151a2d;--panel2:#1c2340;--text:#f5f7ff;--muted:#aab2ce;--line:#303957;--purple:#8b5cf6;--cyan:#38d9d6;--pink:#f472b6;--good:#a7f3d0}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(ellipse at 80% 0%,#25204b 0,transparent 36%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none} button,input,textarea,select{font:inherit} button{cursor:pointer}
+    .wrap{width:min(1120px,calc(100% - 36px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;border-bottom:1px solid #ffffff14}
+    .brand{font-size:1.22rem;font-weight:850;letter-spacing:-.04em;display:flex;align-items:center;gap:10px}.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--cyan));color:#101323;font-weight:950}
+    .navlinks{display:flex;gap:22px;color:var(--muted);font-size:.94rem}.navlinks a:hover{color:white}.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:750;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:.2s}
+    .btn-primary{color:#101323;background:linear-gradient(110deg,var(--cyan),#a5f3fc)}.btn-primary:hover{transform:translateY(-1px);filter:brightness(1.05)}.btn-ghost{background:#ffffff0b;border:1px solid var(--line);color:var(--text)}.btn-small{padding:8px 12px;font-size:.88rem}
+    .hero{padding:74px 0 42px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:42px}.eyebrow{color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.13em;font-size:.76rem}
+    h1{font-size:clamp(2.5rem,6vw,4.7rem);line-height:1.02;letter-spacing:-.065em;margin:15px 0 20px}h1 span{background:linear-gradient(90deg,var(--cyan),#c4b5fd,var(--pink));color:transparent;background-clip:text}
+    .lead{font-size:1.12rem;color:var(--muted);max-width:650px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}.note{font-size:.83rem;color:var(--muted)}
+    .hero-art{border:1px solid #ffffff1b;border-radius:28px;padding:22px;background:linear-gradient(145deg,#202647,#121629);box-shadow:0 24px 80px #0005;transform:rotate(1deg)}
+    .art-top{display:flex;justify-content:space-between;color:var(--muted);font-size:.82rem}.art-icon{font-size:2rem}.art-gradient{height:165px;margin:18px 0;border-radius:18px;background:radial-gradient(circle at 35% 30%,#f0abfc,transparent 25%),radial-gradient(circle at 70% 65%,#5eead4,transparent 28%),linear-gradient(135deg,#41306e,#17233d 60%,#30265a);display:grid;place-items:center;font-size:3.3rem}
+    .fake-lines{display:grid;gap:8px}.fake-lines i{height:8px;border-radius:9px;background:#ffffff13}.fake-lines i:nth-child(1){width:92%}.fake-lines i:nth-child(2){width:68%}.fake-lines i:nth-child(3){width:80%}
+    section{padding:45px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:23px}h2{font-size:clamp(1.8rem,3vw,2.55rem);letter-spacing:-.045em;margin:7px 0}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tool{background:linear-gradient(160deg,#191f35,#121629);border:1px solid var(--line);border-radius:20px;padding:21px;min-height:220px;display:flex;flex-direction:column}.tool-icon{width:45px;height:45px;border-radius:14px;display:grid;place-items:center;font-size:1.35rem;background:#8b5cf622;border:1px solid #8b5cf644}.tool h3{margin:15px 0 5px;font-size:1.1rem}.tool p{color:var(--muted);font-size:.93rem;margin:0 0 18px}.tool .btn{margin-top:auto;align-self:flex-start}
+    .tag{display:inline-flex;border-radius:999px;padding:4px 8px;font-size:.72rem;font-weight:800;background:#ffffff0c;border:1px solid var(--line);color:#d5dcf4;margin-left:5px}.tag.pro{color:#f5d0fe;border-color:#a855f755;background:#a855f71c}
+    .workspace{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px}.panel h3{margin:0 0 7px}.field{display:grid;gap:7px;margin:15px 0}.field label{font-size:.9rem;color:#dce2f6;font-weight:650}textarea,input,select{width:100%;color:var(--text);background:#0d1120;border:1px solid #343c5a;border-radius:12px;padding:12px;outline:none}textarea:focus,input:focus,select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #38d9d622}textarea{resize:vertical;min-height:120px}.output{min-height:210px;white-space:pre-wrap;background:#0d1120;border:1px dashed #424b6b;border-radius:12px;padding:14px;color:#dbe5ff}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+    .adbox{border:1px dashed #4b5575;background:#ffffff04;border-radius:15px;padding:17px;text-align:center;color:var(--muted);font-size:.87rem;margin:22px 0}.adbox strong{display:block;color:#d8def3;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:850px;margin:auto}.price-card{border:1px solid var(--line);border-radius:22px;padding:25px;background:var(--panel)}.price-card.featured{border-color:#8b5cf6;box-shadow:0 0 0 1px #8b5cf633}.price{font-size:2.5rem;letter-spacing:-.05em;font-weight:850;margin:10px 0}.price small{font-size:.9rem;color:var(--muted);font-weight:500;letter-spacing:0}.checks{padding:0;list-style:none;color:var(--muted);display:grid;gap:10px;margin:20px 0}.checks li:before{content:"✓";color:var(--good);font-weight:900;margin-right:9px}
+    .notice{background:#332b1b;border:1px solid #8c7139;color:#f8e7bd;border-radius:14px;padding:14px 16px;font-size:.9rem;margin-top:20px}.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}.faq article{border:1px solid var(--line);border-radius:16px;padding:18px;background:#ffffff04}.faq h3{font-size:1rem;margin:0 0 7px}.faq p{margin:0;color:var(--muted);font-size:.93rem}
+    footer{border-top:1px solid #ffffff14;padding:28px 0 42px;color:var(--muted);font-size:.87rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footlinks{display:flex;gap:16px;flex-wrap:wrap}
+    .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#e2e8f0;color:#111827;border-radius:12px;padding:11px 16px;box-shadow:0 10px 35px #0007;z-index:5;display:none}.toast.show{display:block}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:48px}.hero-art{max-width:520px}.grid{grid-template-columns:repeat(2,1fr)}.workspace{grid-template-columns:1fr}.navlinks{display:none}}
+    @media(max-width:540px){.grid,.pricing,.faq{grid-template-columns:1fr}.section-head{display:block}.hero{gap:28px}.wrap{width:min(100% - 26px,1120px)}.panel,.tool,.price-card{padding:18px}}
+  </style>
+</head>
+<body>
+<header class="wrap nav">
+  <a class="brand" href="#inicio" aria-label="NovaIA Studio inicio"><span class="logo">N</span> NovaIA <span style="color:var(--cyan)">Studio</span></a>
+  <nav class="navlinks" aria-label="Navegación principal"><a href="#herramientas">Herramientas</a><a href="#crear">Crear</a><a href="#premium">Premium</a><a href="#faq">Preguntas</a></nav>
+  <a class="btn btn-primary btn-small" href="#crear">Probar gratis ↗</a>
+</header>
+
+<main>
+  <div class="wrap hero" id="inicio">
+    <div>
+      <div class="eyebrow">Tu espacio creativo con IA</div>
+      <h1>De una idea a algo <span>increíble.</span></h1>
+      <p class="lead">Herramientas para preparar textos, ideas visuales y prompts para imágenes y vídeos. Empieza gratis y descubre opciones avanzadas para creadores.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#herramientas">Explorar herramientas →</a><a class="btn btn-ghost" href="#premium">Ver Premium</a></div>
+      <p class="note">Sin instalar programas. Diseño adaptado a móvil, tablet y ordenador.</p>
+    </div>
+    <div class="hero-art" aria-label="Ilustración decorativa de creación con IA">
+      <div class="art-top"><span>✦ ESPACIO CREATIVO</span><span>● ● ●</span></div>
+      <div class="art-gradient">✧</div>
+      <div class="fake-lines"><i></i><i></i><i></i></div>
+      <div style="display:flex;gap:8px;margin-top:17px;flex-wrap:wrap"><span class="tag">Texto</span><span class="tag">Imagen</span><span class="tag">Vídeo</span><span class="tag pro">Premium</span></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="adbox" aria-label="Espacio publicitario"><strong>Espacio publicitario</strong>El anuncio aparecerá aquí cuando conectes y actives tu cuenta publicitaria.</div>
+  </div>
+
+  <section class="wrap" id="herramientas">
+    <div class="section-head"><div><div class="eyebrow">Caja de herramientas</div><h2>¿Qué quieres crear hoy?</h2><p class="muted">Elige una herramienta para empezar. Las funciones de generación avanzada necesitan conectar un proveedor de IA.</p></div></div>
+    <div class="grid">
+      <article class="tool"><div class="tool-icon">✍️</div><h3>Asistente de textos</h3><p>Prepara borradores para publicaciones, blogs, anuncios y descripciones.</p><a class="btn btn-ghost" href="#crear">Crear texto →</a></article>
+      <article class="tool"><div class="tool-icon">🖼️</div><h3>Ideas para imágenes <span class="tag">Gratis</span></h3><p>Convierte una idea en un prompt detallado para generar imágenes con otra herramienta.</p><a class="btn btn-ghost" href="#crear">Crear prompt →</a></article>
+      <article class="tool"><div class="tool-icon">🎬</div><h3>Ideas para vídeos <span class="tag">Gratis</span></h3><p>Genera una estructura de escena y un prompt para preparar tu vídeo con IA.</p><a class="btn btn-ghost" href="#crear">Preparar vídeo →</a></article>
+      <article class="tool"><div class="tool-icon">📱</div><h3>Publicaciones para redes</h3><p>Ideas de títulos, descripciones y llamadas a la acción para tus contenidos.</p><a class="btn btn-ghost" href="#crear">Crear publicación →</a></article>
+      <article class="tool"><div class="tool-icon">🪄</div><h3>Mejorador de prompts <span class="tag">Gratis</span></h3><p>Ordena tu idea con sujeto, estilo, ambiente, iluminación y composición.</p><a class="btn btn-ghost" href="#crear">Mejorar idea →</a></article>
+      <article class="tool"><div class="tool-icon">🚀</div><h3>Generación avanzada <span class="tag pro">Premium</span></h3><p>Prepara tu espacio para futuras generaciones de imagen, vídeo y más.</p><a class="btn btn-ghost" href="#premium">Ver acceso →</a></article>
+    </div>
+  </section>
+
+  <section class="wrap" id="crear">
+    <div class="section-head"><div><div class="eyebrow">Prueba interactiva</div><h2>Crea tu primer borrador</h2><p class="muted">Texto e imágenes pueden usar Cloudflare Workers AI cuando actives la integración. Los prompts de vídeo se preparan como texto; la generación de un archivo de vídeo requiere conectar un proveedor específico.</p></div></div>
+    <div class="workspace">
+      <div class="panel">
+        <h3>Tu idea</h3><p class="muted" style="margin-top:0">Elige un tipo y describe lo que tienes en mente.</p>
+        <div class="field"><label for="tipo">¿Qué quieres preparar?</label><select id="tipo"><option value="texto">Texto / publicación</option><option value="imagen">Prompt para imagen</option><option value="video">Prompt para vídeo</option><option value="redes">Publicación para redes sociales</option><option value="mejorar">Mejorar un prompt</option></select></div>
+        <div class="field"><label for="idea">Describe tu idea</label><textarea id="idea" placeholder="Ejemplo: un gato astronauta explorando una ciudad futurista bajo la lluvia..."></textarea></div>
+        <div class="field"><label for="estilo">Estilo (opcional)</label><select id="estilo"><option value="creativo y claro">Creativo y claro</option><option value="realista y cinematográfico">Realista y cinematográfico</option><option value="elegante y profesional">Elegante y profesional</option><option value="divertido y dinámico">Divertido y dinámico</option><option value="emocional e inspirador">Emocional e inspirador</option></select></div>
+        <button class="btn btn-primary" id="generar" type="button">Generar con IA ✨</button>
+      </div>
+      <div class="panel">
+        <h3>Tu resultado</h3><p class="muted" style="margin-top:0">Edita el texto generado o cópialo para utilizarlo donde quieras.</p>
+        <div class="output" id="resultado" aria-live="polite">Tu resultado aparecerá aquí. Escribe una idea y pulsa «Generar borrador».</div>
+        <div class="actions"><button class="btn btn-ghost" id="copiar" type="button">Copiar resultado</button><button class="btn btn-ghost" id="limpiar" type="button">Limpiar</button></div>
+        <div class="adbox"><strong>¿Quieres desbloquear más?</strong>El espacio para anuncios recompensados puede añadirse después de integrar un proveedor compatible y aprobado.</div>
+      </div>
+    </div>
+    <div class="notice"><strong>Importante:</strong> este borrador es una función local de demostración, no una generación real mediante un modelo de IA. Para crear imágenes o vídeos dentro de esta web habrá que conectar una API de IA, configurar límites de uso y proteger las claves en un servidor.</div>
+  </section>
+
+  <section class="wrap" id="premium">
+    <div class="section-head" style="justify-content:center;text-align:center"><div><div class="eyebrow">Acceso flexible</div><h2>Gratis para empezar. Premium para crecer.</h2><p class="muted">Planes de ejemplo: el cobro todavía no está activado.</p></div></div>
+    <div class="pricing">
+      <article class="price-card"><span class="tag">GRATIS</span><div class="price">0 € <small>/ siempre</small></div><p class="muted">Para probar las herramientas básicas.</p><ul class="checks"><li>Borradores y prompts en el navegador</li><li>Copiar resultados</li><li>Acceso desde móvil y ordenador</li><li>Con anuncios cuando se integren</li></ul><a class="btn btn-ghost" href="#crear" style="width:100%">Empezar gratis</a></article>
+      <article class="price-card featured"><span class="tag pro">PREMIUM</span><div class="price">Próximamente</div><p class="muted">Para creadores que necesitan más capacidad.</p><ul class="checks"><li>Posibles generaciones de imagen y vídeo</li><li>Más usos y herramientas avanzadas</li><li>Experiencia sin anuncios (si se configura)</li><li>Historial y exportación (por implementar)</li></ul><button class="btn btn-primary" id="premiumBtn" style="width:100%" type="button">Avisarme cuando esté listo</button></article>
+    </div>
+    <p class="note" style="text-align:center;margin-top:15px">No se realiza ningún cobro desde esta página. El precio final y las funciones deberán definirse antes de activar las suscripciones.</p>
+  </section>
+
+  <section class="wrap" id="faq">
+    <div class="section-head"><div><div class="eyebrow">Ayuda</div><h2>Preguntas frecuentes</h2></div></div>
+    <div class="faq">
+      <article><h3>¿Puedo generar vídeos e imágenes ya?</h3><p>La web incluye el diseño y una herramienta local para preparar prompts. La generación real requiere conectar servicios externos de IA y revisar sus precios y condiciones.</p></article>
+      <article><h3>¿Cómo se gana dinero con anuncios?</h3><p>Debes solicitar aprobación a una red publicitaria y colocar su código oficial. Los anuncios recompensados necesitan un formato y proveedor compatible; no basta con mostrar un botón.</p></article>
+      <article><h3>¿Cómo activo Premium?</h3><p>Necesitarás un proveedor de pagos, un servidor para validar suscripciones y cuentas de usuario. El botón de esta versión solo muestra un aviso.</p></article>
+      <article><h3>¿La página guarda mis ideas?</h3><p>No. Las solicitudes enviadas a la IA se procesan mediante Cloudflare Workers AI. Esta versión no incluye cuentas ni almacenamiento de historial.</p></article>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><strong style="color:var(--text)">NovaIA Studio</strong><br>Herramientas creativas con inteligencia artificial.</div><div class="footlinks"><a href="#herramientas">Herramientas</a><a href="#premium">Premium</a><a href="#privacidad">Privacidad</a><a href="#contacto">Contacto</a></div><div>© <span id="year"></span> NovaIA Studio</div></div><div class="wrap" style="margin-top:18px;font-size:.8rem"><p id="privacidad">Privacidad: esta demo no envía la idea escrita a un servidor ni crea cuentas. Antes de publicar anuncios, analíticas, pagos o servicios externos, añade una política de privacidad y la información legal correspondiente.</p><p id="contacto">Contacto: configura aquí tu correo de soporte antes de lanzar el servicio.</p></div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+  const $ = id => document.getElementById(id);
+  $('year').textContent = new Date().getFullYear();
+  function notify(message){const t=$('toast');t.textContent=message;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}
+  $('generar').addEventListener('click', async ()=>{
+    const idea=$('idea').value.trim(), tipo=$('tipo').value, estilo=$('estilo').value;
+    if(!idea){notify('Escribe primero una idea.');$('idea').focus();return}
+    const button=$('generar');
+    button.disabled=true; button.textContent='Creando…';
+    $('resultado').textContent='Procesando tu idea…';
+    try {
+      const response = await fetch('/api/ai', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({type:tipo, idea, style:estilo})
+      });
+      const data = await response.json();
+      if(!response.ok) throw new Error(data.error || 'No se ha podido completar la solicitud.');
+      if(data.kind==='image' && data.image){
+        $('resultado').textContent='Imagen generada correctamente. Puedes abrirla o guardarla desde la vista inferior.';
+        let oldImage=document.getElementById('generatedImage');
+        if(oldImage) oldImage.remove();
+        const img=document.createElement('img');
+        img.id='generatedImage'; img.alt='Imagen generada con IA'; img.src=data.image;
+        img.style='display:block;max-width:100%;max-height:480px;object-fit:contain;margin-top:14px;border-radius:12px';
+        $('resultado').appendChild(img);
+      } else {
+        $('resultado').textContent=data.text || 'No se recibió ningún resultado.';
+      }
+    } catch(error) {
+      $('resultado').textContent='No se ha podido conectar con la IA. Comprueba que has activado Workers AI en Cloudflare y publicado la carpeta functions. Detalle: '+error.message;
+      notify('La generación no está disponible.');
+    } finally {
+      button.disabled=false; button.textContent='Generar con IA ✨';
+    }
+  });
+  $('copiar').addEventListener('click',async()=>{
+    const text=$('resultado').textContent;
+    if(!text||text.startsWith('Tu resultado aparecerá')){notify('No hay ningún resultado que copiar.');return}
+    try{await navigator.clipboard.writeText(text);notify('Resultado copiado.')}catch(e){const r=document.createElement('textarea');r.value=text;document.body.appendChild(r);r.select();document.execCommand('copy');r.remove();notify('Resultado copiado.')}
+  });
+  $('limpiar').addEventListener('click',()=>{$('idea').value='';$('resultado').textContent='Tu resultado aparecerá aquí. Escribe una idea y pulsa «Generar borrador».';notify('Formulario limpio.')});
+  $('premiumBtn').addEventListener('click',()=>notify('Premium aún no está activo. Configura primero pagos y cuentas de usuario.'));
+</script>
+</body>
+</html>

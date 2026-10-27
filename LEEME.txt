@@ -1,0 +1,43 @@
+NOVAIA STUDIO — PROYECTO PARA GITHUB + CLOUDFLARE PAGES
+
+ARCHIVOS
+- index.html: interfaz web
+- functions/api/ai.js: función de servidor para texto e imágenes con Cloudflare Workers AI
+
+QUÉ FUNCIONA CUANDO SE CONFIGURA
+- Texto y publicaciones: modelo de texto de Workers AI.
+- Imágenes: FLUX.1 schnell a través de Workers AI.
+- Vídeos: prepara prompts detallados, pero NO genera todavía un archivo de vídeo.
+- No incluye aún pagos, usuarios, créditos persistentes ni anuncios activos.
+
+SUBIRLO A GITHUB
+1. Abre el repositorio que ya está conectado a Cloudflare Pages.
+2. Sube/reemplaza index.html.
+3. Crea la ruta functions/api/ai.js y pega/sube el archivo con ese nombre exacto.
+4. Haz Commit changes.
+5. Confirma que Cloudflare Pages termina un nuevo deployment.
+
+ACTIVAR EL BINDING DE IA
+1. Entra en https://dash.cloudflare.com/
+2. Ve a Workers & Pages y selecciona el proyecto Pages.
+3. Abre Settings (Configuración) > Bindings (Enlaces) o Functions/Settings, según la interfaz.
+4. Añade un binding de tipo Workers AI. El nombre de variable debe ser exactamente: AI
+5. Guarda y vuelve a desplegar el proyecto.
+6. Prueba en la web una petición de texto y otra de imagen.
+
+Si tu interfaz no muestra Workers AI como binding, no inventes un valor: revisa la documentación oficial de Cloudflare Workers AI para Pages o envíame una captura de la pantalla de configuración.
+
+PRESUPUESTO
+Cloudflare Workers AI documenta una asignación gratuita diaria (actualmente 10.000 Neurons/día) para Workers Free. Los modelos consumen cantidades diferentes y los límites pueden cambiar; comprueba la cuota de tu cuenta. No actives un plan de pago si quieres mantener 0 €.
+
+ANUNCIOS
+Los bloques de la página son marcadores, no anuncios reales. AdSense requiere revisión y aprobación del sitio. Los anuncios recompensados para web pueden configurarse con Google Ad Manager u otro proveedor compatible, pero exigen una integración y reglas de recompensa; no se han activado aquí.
+
+PREMIUM Y CRÉDITOS
+Los botones y precios son solo interfaz. No cobres a usuarios hasta conectar pagos, verificar suscripciones en servidor y mantener un contador de créditos que no se pueda modificar desde el navegador.
+
+SEGURIDAD Y LÍMITES
+- No pongas claves privadas en index.html.
+- La función limita la longitud de la idea, pero antes de abrir el servicio al público debes añadir límites de frecuencia por IP/usuario y controles contra abuso.
+- Esta versión no tiene autenticación ni un sistema real de créditos.
+- La generación de vídeo requiere un proveedor específico distinto y podría no tener cuota gratuita.
